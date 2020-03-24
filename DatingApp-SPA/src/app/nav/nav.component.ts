@@ -11,6 +11,7 @@ export class NavComponent implements OnInit {
   constructor(private authService: AuthService ) {}
   ngOnInit() {
   }
+
   login() {
     this.authService.login(this.model).subscribe( next => {
       console.log('Logged in successufully');
