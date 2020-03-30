@@ -3,13 +3,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using DatinApp.API.Dtos;
-using DatinApp.API.Modules;
+using DatingApp.API.Dtos;
+using DatingApp.API.Modules;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DatinApp.API.Controllers
+namespace DatingApp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]    // this allow to use all the features of the "User" class like the required atributes

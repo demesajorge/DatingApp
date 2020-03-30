@@ -4,9 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using DatinApp.API.Controllers;
-using DatinApp.API.Data;
-using DatinApp.API.Helpers;
+using AutoMapper;
+using DatingApp.API.Controllers;
+using DatingApp.API.Data;
+using DatingApp.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -21,7 +22,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DatinApp.API
+namespace DatingApp.API
 {
     public class Startup
     {

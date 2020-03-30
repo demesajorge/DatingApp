@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DatinApp.API.Modules;
+using DatingApp.API.Modules;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatinApp.API.Data
+namespace DatingApp.API.Data
 {
     public class DatingRepository : IDatingRepository
     {

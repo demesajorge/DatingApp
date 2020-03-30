@@ -1,10 +1,12 @@
 using System.Threading.Tasks;
-using DatinApp.API.Data;
+using DatingApp.API.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
+using DatingApp.API.Dtos;
+using System.Collections.Generic;
 
-namespace DatinApp.API.Controllers
+namespace DatingApp.API.Controllers
 {
     [Authorize]
     [Route("api/[Controller]")]
@@ -24,16 +26,18 @@ namespace DatinApp.API.Controllers
         {
             var users = await _repo.GetUsers();
 
-            return Ok(users);
+            var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
+
+            return Ok(usersToReturn);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUser(int id)
+        public async Task<IActionResult> GetUser( int id)
         {
             var user = await _repo.GetUser(id);
 
-            var userToReturn = _mapper.Map<>
-            return Ok(user);
+            var userToReturn = _mapper.Map<UserForDetailedDto>(user);
+            return Ok(userToReturn);
         }
     }
 }

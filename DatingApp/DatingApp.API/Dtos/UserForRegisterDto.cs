@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace DatinApp.API.Dtos
+namespace DatingApp.API.Dtos
 {
     public class UserForRegisterDto
     {

@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using DatinApp.API.Modules;
+using DatingApp.API.Modules;
 
-namespace DatinApp.API.Controllers
+namespace DatingApp.API.Controllers
 {
     public interface IAuthRepository
     {

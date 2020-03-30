@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using DatinApp.API.Modules;
+using DatingApp.API.Modules;
 
-namespace DatinApp.API.Dtos
+namespace DatingApp.API.Dtos
 {
     public class UserForDetailedDto
     {
@@ -18,6 +18,7 @@ namespace DatinApp.API.Dtos
         public string Interests { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public ICollection<Photo> Photos { get; set; }
+        public string PhotoUrl { get; set; }
+        public ICollection<PhotosForDetailedDto> Photos { get; set; }
     }
 }

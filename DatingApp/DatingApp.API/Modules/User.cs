@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DatinApp.API.Modules
+namespace DatingApp.API.Modules
 {
     public class User
     {

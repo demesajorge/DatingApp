@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using DatinApp.API.Controllers;
-using DatinApp.API.Modules;
+using DatingApp.API.Controllers;
+using DatingApp.API.Modules;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatinApp.API.Data
+namespace DatingApp.API.Data
 {
     public class AuthRepository : IAuthRepository
     {
