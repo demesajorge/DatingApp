@@ -12,9 +12,5 @@ namespace DatingApp.API.Data
         public DbSet<User>  Users { get; set; }
         public DbSet<Photo> Photos { get; set; }
 
-        internal void Delete<T>(T entity) where T : class
-        {
-            throw new NotImplementedException();
-        }
     }
 }
