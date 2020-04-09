@@ -8,7 +8,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import {HttpClientModule} from '@angular/common/http';
 import { from } from 'rxjs';
 import { NavComponent } from './nav/nav.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -19,6 +19,7 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MessageComponent } from './message/message.component';
 import { ListsComponent } from './lists/lists.component';
 import { RouterModule } from '@angular/router';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { appRoutes } from './routes';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
@@ -59,10 +60,13 @@ export class CustomHammerConfig extends HammerGestureConfig {
    ],
    imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
+      BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,

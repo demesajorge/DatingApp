@@ -14,7 +14,7 @@ export class AuthService {
   jwtHelper = new JwtHelperService();
   decodedToken: any;
   currentUser: User;
-  photoUrl = new BehaviorSubject<string>('../../assets/user.png');
+  photoUrl = new BehaviorSubject<string>('../../assets/.png'); // default photo user
   currentPhotoUrl = this.photoUrl.asObservable();
   getMemberPhoto: any;
 
@@ -25,23 +25,26 @@ changeMemberPhoto(photoUrl: string) {
 }
 
 login(model: any) {
-  return this.http.post(this.baseUrl + 'login', model)
-  .pipe(
-    map((response: any) => {
-      const user = response;
-      if (user) {
-        localStorage.setItem('token', user.token);
-        localStorage.setItem('user', JSON.stringify(user.user) );
-        this.decodedToken = this.jwtHelper.decodeToken(user.token);
-        this.currentUser = user.user;
-        this.changeMemberPhoto(this.currentUser.photoUrl);
-      }
+  return this.http
+    .post(this.baseUrl + 'login', model)
+      .pipe(
+        map((response: any) => {
+          const user = response;
+          if (user) {
+            localStorage.setItem('token', user.token);
+            localStorage.setItem('user', JSON.stringify(user.user) );
+            this.decodedToken = this.jwtHelper.decodeToken(user.token);
+            this.currentUser = user.user;
+            this.changeMemberPhoto(this.currentUser.photoUrl);
+          }
     })
 );
 }
 
-regiter(model: any) {
-  return this.http.post(this.baseUrl + 'register', model);
+// regiter(model: any) {
+  regiter(user: User) {
+  // return this.http.post(this.baseUrl + 'register', model);
+  return this.http.post(this.baseUrl + 'register', user);
 }
 
 loggedIn() {
